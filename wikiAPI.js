@@ -1,15 +1,17 @@
 class TextGenerator{
 
     constructor(data){
-        this.title = data.title;
-        this.url = `https://en.wikipedia.org/?curid=${data.pageid}`;
 
-        this.content = "";
+        this.title = Object.values(Object.values(data)[0])[2];
+        this.url = `https://en.wikipedia.org/?curid=`+Object.values(Object.values(data)[0])[0];
+        this.content = Object.values(Object.values(data)[0])[3]
+
+        this.tempS = this.title+" "+this.url+" "+this.content;
     }
-    show_content(data){
+    show_content(){
         const resultContent = document.getElementById("text-rw");
         //resultContent.insertAdjacentHTML('beforeend',data);
-        resultContent.innerHTML = data;
+        resultContent.innerHTML = this.tempS;
     }
 
 }
@@ -83,10 +85,13 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     const data = await req.handle_query(event);
     
     if(data){
-        const reqContent = new APIManager('action=query&prop=extracts&format=json&exintro=&origin=*&titles='+data.title,"content");
+        const reqContent = new APIManager('action=query&prop=extracts&explaintext=&format=json&&origin=*&exintro=1&titles='+data.title,"content");
         const dataCont = await reqContent.handle_query(event);
         if(dataCont){
-            // i have the content but how do i read it? 
+            const textGen = new TextGenerator(dataCont);
+            textGen.show_content();
+            console.log(dataCont);
+            
         }else{
             console.error("data content not found!");
         }
