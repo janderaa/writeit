@@ -3,6 +3,8 @@ class TextGenerator{
     constructor(data){
         this.title = data.title;
         this.url = `https://en.wikipedia.org/?curid=${data.pageid}`;
+
+        this.content = "";
     }
     show_content(data){
         const resultContent = document.getElementById("text-rw");
@@ -14,7 +16,7 @@ class TextGenerator{
 
 class APIManager{
 
-    constructor(cfg,type,q = "",){
+    constructor(cfg,type,q = ""){
 
         this.query = q.length==0 ? "" : '&srsearch=`'+q.trim();
         this.request = 'https://en.wikipedia.org/w/api.php?'+cfg+this.query;
@@ -62,12 +64,12 @@ class APIManager{
 
                 this.data = results.query.search[randNum];
 
-                console.log(this.data);
+                //console.log(this.data);
             break;
             case "content":
                 this.data = results.query.pages;
 
-                console.log(this.data);
+                //console.log(this.data);
             break;
         }
         
@@ -86,7 +88,7 @@ const form = document.getElementById("search-form").addEventListener("submit",as
         if(dataCont){
             // i have the content but how do i read it? 
         }else{
-            console.error("error data content not found!");
+            console.error("data content not found!");
         }
     }else{
         console.error("data not found!")
