@@ -1,15 +1,7 @@
 class APImanager{
 
     constructor(q){
-        let config = '
-        action=query&
-        list=search&
-        prop=info&
-        inprop=url&
-        utf8=&
-        format=json&
-        origin=*&
-        srlimit=20';
+        let config = 'action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30';
 
         this.query = q.length==0 ? "" : q.trim();
         this.request = 'https://en.wikipedia.org/w/api.php?'+config+'&srsearch=`'+this.query;
@@ -21,16 +13,16 @@ class APImanager{
         try {
 
             const results = await this.search_wikipedia();
-            console.log(results);
+            //console.log(results);
+            this.process_json(results);
 
         } catch (err) {
             console.error(err);
-            alert('Failed to search wikipedia');
+            alert('something went wrong! Try again');
         }
 
     }
 
-    // simple AJAX petition
     async  search_wikipedia(){
         const res = await fetch(this.request);
 
@@ -43,11 +35,19 @@ class APImanager{
         return json;
     }
 
-    show_content(){
-        // extract json content
-        // process json content
-        // show content
-        return "";
+    process_json(results){
+        let randNum = Math.floor(Math.random()* 30);
+
+        const data = results.query.search[randNum].snippet;
+        //console.log(data);
+
+        this.show_content(data);
+    }
+
+    show_content(data){
+        const resultContent = document.getElementById("text-rw");
+        //resultContent.insertAdjacentHTML('beforeend',data);
+        resultContent.innerHTML = data;
     }
    
 }
