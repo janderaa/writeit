@@ -1,7 +1,18 @@
 class APImanager{
 
     constructor(q){
+        let config = '
+        action=query&
+        list=search&
+        prop=info&
+        inprop=url&
+        utf8=&
+        format=json&
+        origin=*&
+        srlimit=20';
+
         this.query = q.length==0 ? "" : q.trim();
+        this.request = 'https://en.wikipedia.org/w/api.php?'+config+'&srsearch=`'+this.query;
     }
 
     async handle_query(event){
@@ -21,8 +32,7 @@ class APImanager{
 
     // simple AJAX petition
     async  search_wikipedia(){
-        const request = 'https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=`'+this.query;
-        const res = await fetch(request);
+        const res = await fetch(this.request);
 
         if(!res.ok){
             throw Error(res.statusText);
