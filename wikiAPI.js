@@ -4,9 +4,10 @@ class TextGenerator{
 
         this.title = Object.values(Object.values(data)[0])[2];
         this.url = `https://en.wikipedia.org/?curid=`+Object.values(Object.values(data)[0])[0];
-        this.content = Object.values(Object.values(data)[0])[3]
-
-        this.tempS = this.title+" "+this.url+" "+this.content;
+        this.content = Object.values(Object.values(data)[0])[3];
+        this.length = this.content.length;
+        this.contentArray = this.content.split('');
+        this.tempS = this.title+" "+this.url+" "+this.content+" "+this.length+" "+this.contentArray;
     }
     show_content(){
         const resultContent = document.getElementById("text-rw");
@@ -39,7 +40,8 @@ class APIManager{
             return this.data;
         } catch (err) {
             console.error(err);
-            alert('something went wrong! Try again');
+
+            alert('something went wrong! Be sure to type an existing word');
 
             return null;
         }
