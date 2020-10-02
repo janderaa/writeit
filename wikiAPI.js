@@ -12,7 +12,8 @@ class TextGenerator{
     show_content(){
         const resultContent = document.getElementById("text-rw");
         //resultContent.insertAdjacentHTML('beforeend',data);
-        resultContent.innerHTML = this.tempS;
+        //resultContent.innerHTML = this.tempS;
+        resultContent.innerHTML = this.content;
     }
 
 }
