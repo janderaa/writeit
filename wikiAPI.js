@@ -42,7 +42,7 @@ class APIManager{
         } catch (err) {
             console.error(err);
 
-            alert('something went wrong! Be sure to type an existing word');
+            alert('something went wrong! Be sure to type correctly');
 
             return null;
         }
@@ -102,3 +102,9 @@ const form = document.getElementById("search-form").addEventListener("submit",as
         console.error("data not found!")
     }
 });
+
+window.onkeypress = ()=>{
+    // it always called whenever the user types something
+    // to DO: detect key, detect special case keys (shift+1, shift+`, etc..)
+    console.log("Key pressed");
+}
