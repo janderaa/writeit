@@ -171,10 +171,5 @@ function text_writing_process(char, ctrl, shift){
 window.onkeydown = (e)=>{
     let ctrl = e.ctrlKey ? true : false;
     let shift = e.shiftKey ? true : false; 
-    // explore textGen contentArray
-    // identify the first letter on the array
-    // if it coincides with the key pressed*  then put it out of the array 
-    // AND make it known in the text on the screen
-    
-    text_writing_proccess(e.key, ctrl, shift);    
+    if(textGen.content.length >0){text_writing_proccess(e.key, ctrl, shift);}
 }
