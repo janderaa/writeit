@@ -1,6 +1,6 @@
 var textGen = null;
 
-class TextGenerator{
+class textGenManager{
 
     constructor(data){
 
@@ -18,6 +18,7 @@ class TextGenerator{
         console.info(this.contentArray);
         resultContent.innerHTML = this.content;
     }
+
     hide_content(){
 
     }
@@ -98,7 +99,7 @@ const form = document.getElementById("search-form").addEventListener("submit",as
         const reqContent = new APIManager('action=query&prop=extracts&explaintext=&format=json&&origin=*&exintro=1&titles='+data.title,"content");
         const dataCont = await reqContent.handle_query(event);
         if(dataCont){
-            textGen = new TextGenerator(dataCont);
+            textGen = new textGenManager(dataCont);
             textGen.show_content();
             console.log(dataCont);
             
@@ -110,7 +111,9 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
-function text_writing_process(char, ctrl = false, shift = false){
+function text_writing_process(char, ctrl, shift){
+    // textGen array needs to at least have 1 char!
+
     let character = "";
     
     // normal
@@ -122,60 +125,20 @@ function text_writing_process(char, ctrl = false, shift = false){
         character = char;
     }
 
-    if(character == textGen.contentArray[0]){
-        
+    if(character === textGen.contentArray[0]){
+        textGen.contentArray.shift();
+        //textGen.hide_character(); // it don't exists yet!
     }
     // ending
 }
 
 window.onkeydown = (e)=>{
-    var ctrl = e.ctrlKey ? true : false;
-    var shift = e.shiftKey ? true : false; 
+    let ctrl = e.ctrlKey ? true : false;
+    let shift = e.shiftKey ? true : false; 
     // explore textGen contentArray
     // identify the first letter on the array
     // if it coincides with the key pressed*  then put it out of the array 
     // AND make it known in the text on the screen
-    switch(e.key){
-        case "a":
-        case "c":
-        case "d":
-        case "e":
-        case "f":
-        case "g":
-        case "h":
-        case "i":
-        case "j":
-        case "k":
-        case "l":
-        case "m":
-        case "n":
-        case "ñ":
-        case "o":
-        case "p":
-        case "q":
-        case "r":
-        case "s":
-        case "t":
-        case "u":
-        case "v":
-        case "w":
-        case "x":
-        case "y":
-        case "z":
-        
-        case "0":
-        case "1":
-        case "2":
-        case "3":
-        case "4":
-        case "5":
-        case "6":
-        case "7":
-        case "8":
-        case "9":
-
-        case " ":
-
-    }
-
+    
+    text_writing_proccess(e.key, ctrl, shift);    
 }
