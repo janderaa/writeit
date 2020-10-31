@@ -1,5 +1,5 @@
 var textGen = null;
-
+// known issues: the content on textGenManager has non common characters such as \n
 class textGenManager{
 
     constructor(data){
