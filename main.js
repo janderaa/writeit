@@ -118,9 +118,40 @@ function text_writing_process(char, ctrl, shift){
     
     // normal
     if(ctrl){
-
+        
     }else if(shift){
-
+        switch(e.key){
+            case "0":
+                character = "=";
+                break;
+            case "1":
+                character = "!";
+                break;
+            case "2":
+                character = '"';
+                break;
+            case "3":
+                character = "·";
+                break;
+            case "4":
+                character = "$";
+                break;
+            case "5":
+                character = "%";
+                break;
+            case "6":
+                character ="&";
+                break;
+            case "7":
+                character = "/";
+                break;
+            case "8":
+                character ="(";
+                break;
+            case "9":
+                character = ")";
+                break;
+        }
     }else{
         character = char;
     }
