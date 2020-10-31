@@ -159,12 +159,13 @@ function text_writing_process(char, ctrl, shift){
                 character = ")";
                 break;
             default: 
-                character.toUpperCase();
+                character = char.toUpperCase();
                 break;
         }
     }else{
         character = char;
     }
+
     console.log(character);
     console.log(textGen.contentArray[0]);
     if(character === textGen.contentArray[0]){
