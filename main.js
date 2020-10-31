@@ -18,6 +18,9 @@ class TextGenerator{
         console.info(this.contentArray);
         resultContent.innerHTML = this.content;
     }
+    hide_content(){
+        
+    }
 
 }
 
@@ -109,7 +112,7 @@ const form = document.getElementById("search-form").addEventListener("submit",as
 
 function text_writing_process(letter){
     // normal
-    
+
     // ending
 }
 
