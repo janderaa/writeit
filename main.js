@@ -23,6 +23,12 @@ class textGenManager{
 
     }
 
+    hide_character(){
+        this.contentArray.shift();
+        this.content = this.content.substring(1);
+        this.show_content();
+    }
+
 }
 
 class APIManager{
@@ -157,8 +163,7 @@ function text_writing_process(char, ctrl, shift){
     }
 
     if(character === textGen.contentArray[0]){
-        textGen.contentArray.shift();
-        //textGen.hide_character(); // it don't exists yet!
+        textGen.hide_character();
     }
     // ending
 }
