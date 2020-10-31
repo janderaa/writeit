@@ -110,8 +110,21 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
-function text_writing_process(letter, ctrl = false, shift = false){
+function text_writing_process(char, ctrl = false, shift = false){
+    let character = "";
+    
     // normal
+    if(ctrl){
+
+    }else if(shift){
+
+    }else{
+        character = char;
+    }
+
+    if(character == textGen.contentArray[0]){
+        
+    }
     // ending
 }
 
