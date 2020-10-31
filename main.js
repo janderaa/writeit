@@ -171,5 +171,5 @@ function text_writing_process(char, ctrl, shift){
 window.onkeydown = (e)=>{
     let ctrl = e.ctrlKey ? true : false;
     let shift = e.shiftKey ? true : false; 
-    if(textGen.content.length >0){text_writing_proccess(e.key, ctrl, shift);}
+    if(textGen.content.length >0){text_writing_process(e.key, ctrl, shift);}
 }
