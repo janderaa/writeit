@@ -19,7 +19,7 @@ class TextGenerator{
         resultContent.innerHTML = this.content;
     }
     hide_content(){
-        
+
     }
 
 }
@@ -110,9 +110,8 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
-function text_writing_process(letter){
+function text_writing_process(letter, ctrl = false, shift = false){
     // normal
-
     // ending
 }
 
