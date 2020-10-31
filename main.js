@@ -107,6 +107,12 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
+function text_writing_process(letter){
+    // normal
+    
+    // ending
+}
+
 window.onkeydown = (e)=>{
     var ctrl = e.ctrlKey ? true : false;
     var shift = e.shiftKey ? true : false; 
