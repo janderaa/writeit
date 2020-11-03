@@ -24,8 +24,14 @@ class textGenManager{
     // Known bug: the blank spaces are eliminated (or maybe it's ignored its printing?) together
     // with the first character on the text
     hide_character(){
-        this.contentArray.shift();
-        this.content = this.content.slice(1);
+        ;
+        if(this.contentArray[1]== " "){
+            this.content = this.content.slice(1);
+            this.content = " "+this.content;
+        }else{
+            this.content = this.content.slice(1);
+        }
+        this.contentArray.shift()
         this.show_content();
     }
 
