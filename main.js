@@ -1,5 +1,4 @@
 var textGen = null;
-// known issues: the content on textGenManager has non common characters such as \n
 
 const form = document.getElementById("search-form").addEventListener("submit",async (event)=>{
     const query = document.getElementById("search-input").value; 

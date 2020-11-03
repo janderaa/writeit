@@ -1,5 +1,6 @@
-class textGenManager{
+// known issues: the content on textGenManager has non common characters such as \n
 
+class textGenManager{
     constructor(data){
 
         this.title = Object.values(Object.values(data)[0])[2];
