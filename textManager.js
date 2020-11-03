@@ -15,6 +15,7 @@ class textGenManager{
         //resultContent.insertAdjacentHTML('beforeend',data);
         //resultContent.innerHTML = this.tempS;
         console.info(this.contentArray);
+        console.info(this.content);
         resultContent.innerHTML = this.content;
     }
 
@@ -24,9 +25,8 @@ class textGenManager{
     // Known bug: the blank spaces are eliminated (or maybe it's ignored its printing?) together
     // with the first character on the text
     hide_character(){
-        if(this.contentArray[1]== " "){
-            this.content = this.content.slice(1);
-            this.content = " "+this.content;
+        if(this.contentArray[1]=== " "){
+            this.content = " "+this.content.slice(1);
         }else{
             this.content = this.content.slice(1);
         }
