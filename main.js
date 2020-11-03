@@ -26,48 +26,7 @@ function text_writing_process(char, ctrl, shift){
 
     let character = "";
     
-    // normal
-    if(ctrl){
-        
-    }else if(shift){
-        switch(char){
-            case "0":
-                character = "=";
-                break;
-            case "1":
-                character = "!";
-                break;
-            case "2":
-                character = '"';
-                break;
-            case "3":
-                character = "·";
-                break;
-            case "4":
-                character = "$";
-                break;
-            case "5":
-                character = "%";
-                break;
-            case "6":
-                character ="&";
-                break;
-            case "7":
-                character = "/";
-                break;
-            case "8":
-                character ="(";
-                break;
-            case "9":
-                character = ")";
-                break;
-            default: 
-                character = char.toUpperCase();
-                break;
-        }
-    }else{
-        character = char;
-    }
+    character = char;
 
     console.log(character);
     console.log(textGen.contentArray[0]);
