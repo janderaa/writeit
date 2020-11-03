@@ -21,23 +21,19 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
-function text_writing_process(char, ctrl, shift){
+function text_writing_process(char){
     // textGen array needs to at least have 1 char!
 
-    let character = "";
-    
-    character = char;
-
-    console.log(character);
+    console.log(char);
     console.log(textGen.contentArray[0]);
-    if(character === textGen.contentArray[0]){
+
+    if(char === textGen.contentArray[0]){
         textGen.hide_character();
     }
+
     // ending
 }
 
 window.onkeydown = (e)=>{
-    let ctrl = e.ctrlKey ? true : false;
-    let shift = e.shiftKey ? true : false; 
-    if(textGen.content.length >0){text_writing_process(e.key, ctrl, shift);}
+    if(textGen.content.length >0){text_writing_process(e.key);}
 }
