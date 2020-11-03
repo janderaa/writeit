@@ -22,14 +22,11 @@ class textGenManager{
     hide_content(){
 
     }
-    // Known bug: the blank spaces are eliminated (or maybe it's ignored its printing?) together
-    // with the first character on the text
+    // Known bug: the blank spaces are ignored on the HTML if they are located at the head of the string
     hide_character(){
-        if(this.contentArray[1]=== " "){
-            this.content = " "+this.content.slice(1);
-        }else{
-            this.content = this.content.slice(1);
-        }
+        
+        this.content = this.content.slice(1);
+        
         this.contentArray.shift();
         this.show_content();
     }
