@@ -1,6 +1,9 @@
 var textGen = null;
+const textBox = document.getElementById("text-rw");
+const form = document.getElementById("search-form");
+// definition of events
 
-const form = document.getElementById("search-form").addEventListener("submit",async (event)=>{
+form.addEventListener("submit",async (event)=>{
     const query = document.getElementById("search-input").value; 
     const req = new APIManager('action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30',"search",query);
     const data = await req.handle_query(event);
@@ -21,11 +24,14 @@ const form = document.getElementById("search-form").addEventListener("submit",as
     }
 });
 
-function text_writing_process(char){
-    // textGen array needs to at least have 1 char!
+textBox.addEventListener("mouseleave",(element)=>{
+    textBox.style.backgroundColor = "red";
+})
 
-    console.log(char);
-    console.log(textGen.contentArray[0]);
+function text_writing_process(char){
+
+    //console.log(char);
+    //console.log(textGen.contentArray[0]);
 
     char = char==="Enter"? "\n" : char;
 
@@ -33,12 +39,19 @@ function text_writing_process(char){
         textGen.hide_character();
     }
 
-    // ending
 }
 
 function end_writing_process(){
     console.info("Writting finished");
     textGen = null;
+}
+
+function activate_focus(element){
+    element.style.backgroundColor = 'orange';
+}
+
+function deactivate_focus(element){
+    element.style.backgroundColor = 'red';
 }
 
 window.onkeydown = (e)=>{
