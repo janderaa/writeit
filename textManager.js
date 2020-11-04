@@ -22,7 +22,7 @@ class textGenManager{
     hide_content(){
 
     }
-    // Known bug: the blank spaces are ignored on the HTML if they are located at the head of the string
+    
     hide_character(){
         
         this.content = this.content.slice(1);
