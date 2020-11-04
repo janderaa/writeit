@@ -37,5 +37,7 @@ function text_writing_process(char){
 }
 
 window.onkeydown = (e)=>{
-    if(textGen.content.length >0){text_writing_process(e.key);}
+    if(textGen)
+        if(textGen.content.length >0)
+            text_writing_process(e.key);
 }
