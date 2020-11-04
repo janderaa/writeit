@@ -27,6 +27,8 @@ function text_writing_process(char){
     console.log(char);
     console.log(textGen.contentArray[0]);
 
+    char = char==="Enter"? "\n" : char;
+
     if(char === textGen.contentArray[0]){
         textGen.hide_character();
     }
