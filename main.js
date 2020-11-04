@@ -36,8 +36,16 @@ function text_writing_process(char){
     // ending
 }
 
+function end_writing_process(){
+    console.info("Writting finished");
+}
+
 window.onkeydown = (e)=>{
     if(textGen)
-        if(textGen.content.length >0)
+        if(textGen.content.length >0){
             text_writing_process(e.key);
+            if(textGen.content.length == 0){
+                end_writing_process();
+            }
+        }
 }
