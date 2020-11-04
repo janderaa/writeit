@@ -38,6 +38,7 @@ function text_writing_process(char){
 
 function end_writing_process(){
     console.info("Writting finished");
+    textGen = null;
 }
 
 window.onkeydown = (e)=>{
