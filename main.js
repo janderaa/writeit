@@ -24,10 +24,12 @@ form.addEventListener("submit",async (event)=>{
     }
 });
 
+/*
+Is this necessary?
 textBox.addEventListener("mouseleave",(element)=>{
     textBox.style.backgroundColor = "red";
 })
-
+*/
 function text_writing_process(char){
 
     //console.log(char);

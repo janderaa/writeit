@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>write it, learning unexpected</title>
+    <title>Just write</title>
 
 
-    <meta name="description" content="write it, a simple static webpage for learning english, learn culture & improve typing skills">
+    <meta name="description" content="just write, a simple static webpage for learning english, learn culture & improve typing skills">
     <meta property="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property= "og:title" content="write it!">
-    <meta property= "og:description" content="an application made for improving english language, culture and typing">
+    <meta property= "og:title" content="Just write">
+    <meta property= "og:description" content="simple web app made for improving english language, culture and typing">
     <meta property= "og:url" content="https://url.doesntexist">
     <meta property= "og:site_name" content="write.it">
     <meta property= "og:type" content="website">
@@ -20,37 +20,49 @@
 
     <link rel="stylesheet" href="style/base.css">
 
-    <!-- credits to nicolas  :) -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <!--Does this url have any glowing FBI/CIA agents?-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
     <div class="div-large" id="title">
         <header>
             <div id="image-logo"><img src="" alt=""></div>
-            <h1>Write it</h1>
+            <h1>Just write</h1>
+            <p>It's simple: write something on the search box, ENTER to search information, click on the box below, start typing. Done</p>
         </header>
     </div>
 
     <div class="div-large div-input">
         <form id="search-form">
-            <input id="search-input" type="text" placeholder="put text here">
+            <input id="search-input" type="text" placeholder="Arousing ourselves to death">
         </form>
     </div>
 
-    <div class="div-center div-text-to-write">
-        <pre id="text-rw" onclick="activate_focus(this);"></pre>
+    <div id="centerbox">
+        <div class="div-text-to-write">
+            <pre id="text-rw" onclick="activate_focus(this);"></pre>
+        </div>
+        <div id="div-info">
+            <p>How does it work?</p>
+            <ul>
+                <li>You can see the javascript files by easily inspecting the webpage</li>
+                <li>Too lazy / i only consume? ok, this site fetch data from wikipedia's API</li>
+                <li>Did it sound geeky? It's not rocket science, come on</li>
+            </ul>
+        </div>
     </div>
 
-    <div id="footer">
-        <p>powered with peanut and butter</p>
-        <i class="fa fa-github"></i>
-        <i class="fa fa-twitter"></i>
-    </div>
+    <footer>
+        <div id="footer">
+            <p>Built for simplicity w/ butter. GPLv3 License, for you spooky companies <3</p>
+            <!--SVG downloaded from https://feathericons.com/-->
+            <a href="http://" target="_blank" rel="external"><img src="res/github.svg" alt="Github page"></a>
+        </div>
+    </footer>
 
 </body>
+<!--Very malicious and private violating JS files-->
+<!--They require 30+ packages from npm btw-->
+<!--PROCEED UNDER YOUR OWN RISK-->
 <script src="textManager.js"></script>
 <script src="APIManager.js"></script>
 <script src="main.js"></script>

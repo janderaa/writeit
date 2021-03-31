@@ -1,4 +1,35 @@
-/* this comment will be added */
+/*  @media(why?tho)
+ *  */
+body {
+  text-align: justify;
+  color: #1E282D;
+}
+
+header p {
+  background-color: #CCDEF9;
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  padding: 0px 2px;
+}
+header h1 {
+  text-align: center;
+}
+
+li {
+  list-style-type: circle;
+}
+
+div#footer {
+  text-align: center;
+  background-color: #5DB9E8;
+  border-radius: 10px;
+  border-bottom: groove 1px black;
+}
+div #div-info p {
+  border-bottom: solid 2px black;
+  padding-left: 2px;
+}
+
 pre#text-rw {
   background-color: blue;
 }
