@@ -5,6 +5,11 @@ body {
   color: #1E282D;
 }
 
+#text-rw {
+  width: 99%;
+  margin: auto;
+}
+
 header p {
   background-color: #CCDEF9;
   border-right: solid 2px black;
@@ -28,10 +33,6 @@ div#footer {
 div #div-info p {
   border-bottom: solid 2px black;
   padding-left: 2px;
-}
-
-pre#text-rw {
-  background-color: blue;
 }
 
 /*# sourceMappingURL=base.css.map */
