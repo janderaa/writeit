@@ -2,13 +2,20 @@ var textGen = null;
 const textBox = document.getElementById("text-rw");
 const form = document.getElementById("search-form");
 const button = document.getElementById("search-button");
+
 // definition of events
+textBox.addEventListener("focusin",(element)=>{
+    textBox.style.backgroundColor = "orange";
+})
+
+textBox.addEventListener("focusout",(element)=>{
+    textBox.style.backgroundColor = "red";
+})
 
 form.addEventListener("submit",async (event)=>{
     const query = textBox.value;
     const req = new APIManager('action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30',"search",query);
     const data = await req.handle_query(event);
-    
     if(data){
         const reqContent = new APIManager('action=query&prop=extracts&explaintext=&format=json&&origin=*&exintro=1&titles='+data.title,"content");
         const dataCont = await reqContent.handle_query(event);
@@ -24,32 +31,6 @@ form.addEventListener("submit",async (event)=>{
     }
 });
 
-textBox.addEventListener("focusin",(element)=>{
-    textBox.style.backgroundColor = "orange";
-})
-
-textBox.addEventListener("focusout",(element)=>{
-    textBox.style.backgroundColor = "red";
-})
-
-function text_writing_process(char){
-
-    //console.log(char);
-    //console.log(textGen.contentArray[0]);
-
-    char = char==="Enter"? "\n" : char;
-
-    if(char === textGen.contentArray[0]){
-        textGen.hide_character();
-    }
-
-}
-
-function end_writing_process(){
-    console.info("Writting finished");
-    textGen = null;
-}
-
 // this is how a spyware starts
 window.onkeydown = (e)=>{
     if(textGen)
@@ -60,3 +41,19 @@ window.onkeydown = (e)=>{
             }
         }
 }
+
+function text_writing_process(char){
+    //console.log(char);
+    //console.log(textGen.contentArray[0]);
+    char = char==="Enter"? "\n" : char;
+    if(char === textGen.contentArray[0]){
+        textGen.hide_character();
+    }
+}
+
+function end_writing_process(){
+    console.info("Writting finished");
+    textGen = null;
+}
+
+

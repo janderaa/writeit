@@ -1,6 +1,6 @@
-// known issues: the content on textGenManager has non common characters such as \n
 
 class textGenManager{
+
     constructor(data, button, textArea){
         this.title = Object.values(Object.values(data)[0])[2];
         this.url = `https://en.wikipedia.org/?curid=`+Object.values(Object.values(data)[0])[0];
@@ -23,9 +23,7 @@ class textGenManager{
         this.textAreaDOM.value = this.content;
     }
 
-    /*
-    Method to filter odd characters on contentArray <Array>
-    */
+    //Method to filter odd characters on contentArray <Array>
     process_content(){
         this.contentArray.map(data => {
             if(data==="–")
@@ -33,7 +31,7 @@ class textGenManager{
         });
     }    
  
-    // Method to update user-written characters
+    // Method to for user-written characters
     hide_character(){
         this.content = this.content.slice(1);
         this.contentArray.shift();
