@@ -1,17 +1,30 @@
+/**
+ * LICENSED UNDER THE GPLv3 LICENSE, SEE MORE INFORMATION AT THE LICENSE.TXT FILE
+ * (begone, "the neo enviorenment" of big tech companies or just shady people)
+ * 
+ * Open source project for exposing a simple case of providing a simple service
+ * by simple means.
+ * 
+ * If you see any errors, bugs, recommendations on anything please open an issue
+ * or mail me on github.
+ */
+
+
 var textGen = null;
 const textBox = document.getElementById("text-rw");
 const form = document.getElementById("search-form");
 const button = document.getElementById("search-button");
 
 // definition of events
-textBox.addEventListener("focusin",(element)=>{
+textBox.addEventListener("focusin",(event)=>{
     textBox.style.backgroundColor = "orange";
 })
 
-textBox.addEventListener("focusout",(element)=>{
+textBox.addEventListener("focusout",(event)=>{
     textBox.style.backgroundColor = "red";
 })
 
+// Take in mind the origin=?
 form.addEventListener("submit",async (event)=>{
     const query = textBox.value;
     const req = new APIManager('action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30',"search",query);

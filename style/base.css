@@ -28,7 +28,7 @@ div#footer {
   text-align: center;
   background-color: #5DB9E8;
   border-radius: 10px;
-  border-bottom: groove 1px black;
+  border-bottom: groove 2px black;
 }
 div #div-info p {
   border-bottom: solid 2px black;
