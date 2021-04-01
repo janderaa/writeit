@@ -19,11 +19,11 @@ const buttonReset = document.getElementById("reset-button");
 
 // definition of events
 textBox.addEventListener("focusin",(event)=>{
-    textBox.style.backgroundColor = "orange";
+    textBox.classList.add("focused");
 });
 
 textBox.addEventListener("focusout",(event)=>{
-    textBox.style.backgroundColor = "red";
+    textBox.classList.remove("focused");
 });
 
 buttonReset.addEventListener("click",e =>{

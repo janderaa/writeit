@@ -5,18 +5,29 @@ body {
   color: #1E282D;
 }
 
+div.div-large .information {
+  display: flex;
+}
+div.div-large .information button {
+  margin: 0px 2px;
+}
+
 #text-rw {
   width: 99%;
   margin: auto;
   resize: none;
   overflow: hidden;
+  margin-top: 0.5em;
+}
+#text-rw.focused {
+  background-color: #EFF3FC;
 }
 
 header p {
   background-color: #CCDEF9;
   border-right: solid 2px black;
   border-left: solid 2px black;
-  padding: 0px 2px;
+  padding: 6px 4px;
 }
 header h1 {
   text-align: center;
@@ -31,10 +42,10 @@ div#footer {
   background-color: #5DB9E8;
   border-radius: 10px;
   border-bottom: groove 2px black;
+  padding: 1em 0px 0px 0px;
 }
 div #div-info p {
   border-bottom: solid 2px black;
-  padding-left: 2px;
 }
 
 /*# sourceMappingURL=base.css.map */
