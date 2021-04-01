@@ -1,5 +1,5 @@
 /**
- * LICENSED UNDER THE GPLv3 LICENSE, SEE MORE INFORMATION AT THE LICENSE.TXT FILE
+ * LICENSED UNDER THE GPLv3 LICENSE, SEE MORE INFORMATION AT THE LICENSE FILE
  * (begone, "the neo enviorenment" of big tech companies or just shady people)
  * 
  * Open source project for exposing a simple case of providing a simple service
@@ -14,17 +14,26 @@ var textGen = null;
 const textBox = document.getElementById("text-rw");
 const form = document.getElementById("search-form");
 const button = document.getElementById("search-button");
+const anchor = document.getElementById("linktopage");
+const buttonReset = document.getElementById("reset-button");
 
 // definition of events
 textBox.addEventListener("focusin",(event)=>{
     textBox.style.backgroundColor = "orange";
-})
+});
 
 textBox.addEventListener("focusout",(event)=>{
     textBox.style.backgroundColor = "red";
-})
+});
 
-// Take in mind the origin=?
+buttonReset.addEventListener("click",e =>{
+    if (textGen){
+        console.info("ues");
+        textGen.end_writing();
+        textGen = null;
+    }
+});
+
 form.addEventListener("submit",async (event)=>{
     const query = textBox.value;
     const req = new APIManager('action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30',"search",query);
@@ -33,9 +42,9 @@ form.addEventListener("submit",async (event)=>{
         const reqContent = new APIManager('action=query&prop=extracts&explaintext=&format=json&&origin=*&exintro=1&titles='+data.title,"content");
         const dataCont = await reqContent.handle_query(event);
         if(dataCont){
-            textGen = new textGenManager(dataCont, button, textBox);
+            textGen = new textGenManager(dataCont, button, textBox, anchor);
             textGen.show_content();
-            console.log(dataCont);
+            //console.log(dataCont);
         }else{
             console.error("data content not found!");
         }
@@ -65,7 +74,8 @@ function text_writing_process(char){
 }
 
 function end_writing_process(){
-    console.info("Writting finished");
+    //console.info("Writting finished");
+    textGen.end_writing();
     textGen = null;
 }
 

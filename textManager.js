@@ -1,7 +1,8 @@
+// It needs to filter non-UTF-8 characters (Japanese's, Korean's, Hindi's, Russian's, etc)
 
 class textGenManager{
 
-    constructor(data, button, textArea){
+    constructor(data, button, textArea, anchor){
         this.title = Object.values(Object.values(data)[0])[2];
         this.url = `https://en.wikipedia.org/?curid=`+Object.values(Object.values(data)[0])[0];
         this.content = Object.values(Object.values(data)[0])[3];
@@ -10,16 +11,19 @@ class textGenManager{
         this.process_content();
         this.buttonDOM = button;
         this.textAreaDOM = textArea;
+        this.anchor = anchor;
         //this.tempS = this.title+" "+this.url+" "+this.content+" "+this.length+" "+this.contentArray;
     }
 
     show_content(){
         //resultContent.insertAdjacentHTML('beforeend',data);
         //resultContent.innerHTML = this.tempS;
+        //console.info(this.contentArray);
+        //console.info(this.content);
         this.buttonDOM.disabled = true;
         this.textAreaDOM.readOnly = true;
-        console.info(this.contentArray);
-        console.info(this.content);
+        this.anchor.innerHTML = this.title;
+        this.anchor.href = this.url;
         this.textAreaDOM.value = this.content;
     }
 
@@ -36,6 +40,12 @@ class textGenManager{
         this.content = this.content.slice(1);
         this.contentArray.shift();
         this.show_content();
+    }
+
+    end_writing(){
+        this.buttonDOM.disabled = false;
+        this.textAreaDOM.readOnly = false;
+        this.textAreaDOM.value = "";
     }
 
 }
