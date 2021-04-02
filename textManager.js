@@ -1,4 +1,4 @@
-// It needs to filter non-UTF-8 characters (Japanese's, Korean's, Hindi's, Russian's, etc)
+// It needs to filter non-UTF8 characters (Japanese's, Korean's, Hindi's, Russian's, etc)
 
 class textGenManager{
 
@@ -6,33 +6,30 @@ class textGenManager{
         this.title = Object.values(Object.values(data)[0])[2];
         this.url = `https://en.wikipedia.org/?curid=`+Object.values(Object.values(data)[0])[0];
         this.content = Object.values(Object.values(data)[0])[3];
-        this.length = this.content.length;
+	this.process_content();
         this.contentArray = this.content.split('');
-        this.process_content();
         this.buttonDOM = button;
         this.textAreaDOM = textArea;
         this.anchor = anchor;
         //this.tempS = this.title+" "+this.url+" "+this.content+" "+this.length+" "+this.contentArray;
+	this.show_content();
     }
 
     show_content(){
         //resultContent.insertAdjacentHTML('beforeend',data);
         //resultContent.innerHTML = this.tempS;
-        //console.info(this.contentArray);
-        //console.info(this.content);
+        console.info(this.contentArray);
+        console.info(this.content);
         this.buttonDOM.disabled = true;
         this.textAreaDOM.readOnly = true;
         this.anchor.innerHTML = this.title;
-        this.anchor.href = this.url;
+this.anchor.href = this.url;
         this.textAreaDOM.value = this.content;
     }
 
-    //Method to filter odd characters on contentArray <Array>
+    //Method to filter odd characters on contentArray <Array> and content <string>
     process_content(){
-        this.contentArray.map(data => {
-            if(data==="–")
-                data = "-"
-        });
+        this.content.replace(/[^a-zA-Z0-9]/g,"");
     }    
  
     // Method to for user-written characters

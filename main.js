@@ -28,7 +28,7 @@ textBox.addEventListener("focusout",(event)=>{
 
 buttonReset.addEventListener("click",e =>{
     if (textGen){
-        console.info("ues");
+        //console.info("ues");
         textGen.end_writing();
         textGen = null;
     }
@@ -43,7 +43,6 @@ form.addEventListener("submit",async (event)=>{
         const dataCont = await reqContent.handle_query(event);
         if(dataCont){
             textGen = new textGenManager(dataCont, button, textBox, anchor);
-            textGen.show_content();
             //console.log(dataCont);
         }else{
             console.error("data content not found!");
