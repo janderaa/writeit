@@ -28,7 +28,6 @@ textBox.addEventListener("focusout",(event)=>{
 
 buttonReset.addEventListener("click",e =>{
     if (textGen){
-        //console.info("ues");
         textGen.end_writing();
         textGen = null;
     }
@@ -43,7 +42,6 @@ form.addEventListener("submit",async (event)=>{
         const dataCont = await reqContent.handle_query(event);
         if(dataCont){
             textGen = new textGenManager(dataCont, button, textBox, anchor);
-            //console.log(dataCont);
         }else{
             console.error("data content not found!");
         }
@@ -64,8 +62,6 @@ window.onkeydown = (e)=>{
 }
 
 function text_writing_process(char){
-    //console.log(char);
-    //console.log(textGen.contentArray[0]);
     char = char==="Enter"? "\n" : char;
     if(char === textGen.contentArray[0]){
         textGen.hide_character();
@@ -73,7 +69,6 @@ function text_writing_process(char){
 }
 
 function end_writing_process(){
-    //console.info("Writting finished");
     textGen.end_writing();
     textGen = null;
 }

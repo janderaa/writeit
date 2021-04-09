@@ -34,11 +34,9 @@ class APIManager{
             case "search":
                 let randNum = Math.floor(Math.random()* 30);
                 this.data = results.query.search[randNum];
-                //console.log(this.data);
             break;
             case "content":
                 this.data = results.query.pages;
-                //console.log(this.data);
             break;
         }        
     }  

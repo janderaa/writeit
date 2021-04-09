@@ -11,19 +11,16 @@ class textGenManager{
         this.buttonDOM = button;
         this.textAreaDOM = textArea;
         this.anchor = anchor;
-        //this.tempS = this.title+" "+this.url+" "+this.content+" "+this.length+" "+this.contentArray;
 	this.show_content();
     }
 
     show_content(){
-        //resultContent.insertAdjacentHTML('beforeend',data);
-        //resultContent.innerHTML = this.tempS;
-        console.info(this.contentArray);
-        console.info(this.content);
+        //console.info(this.contentArray);
+        //console.info(this.content);
         this.buttonDOM.disabled = true;
         this.textAreaDOM.readOnly = true;
         this.anchor.innerHTML = this.title;
-this.anchor.href = this.url;
+	this.anchor.href = this.url;
         this.textAreaDOM.value = this.content;
     }
 
@@ -32,7 +29,7 @@ this.anchor.href = this.url;
         this.content.replace(/[^a-zA-Z0-9]/g,"");
     }    
  
-    // Method to for user-written characters
+    // Method for user-written characters
     hide_character(){
         this.content = this.content.slice(1);
         this.contentArray.shift();
