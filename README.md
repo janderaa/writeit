@@ -2,7 +2,7 @@
 README_ver = 090242021.1
 ```
 # Just write it
-
+------
 A simple dynamic webpage to train typing, learn culture, learn english and use with ease.
 
 The goals of the project are
@@ -12,22 +12,24 @@ The goals of the project are
 
 Since it's open source you can fork it and modify it at your please.
 Licensed under the GPLv3 License, please read more [@link][1]
----
-#### Dependencies
 
+
+#### Dependencies
+---
 **None**, except maybe having internet and a GUI web browser.
 Since the project uses simple CSS code, It's expected to have the same behaviour on all GUI web browsers.
----
+
 #### Known issues
+---
 
 If you have found issues please let it be known.
 - [ ] non UTF8 characters are not filtered
 It's not common to have nor type on certain foreign characters
 Since the site main goal is to type in UTF8 characters, the possibility of having the choice is discarded.
----
-##### Branches
 
-#
+##### Branches
+---
+
 | Name       | Description  | 
 | :-------------:|:-------------:| 
 | master      | OOP centred | 
