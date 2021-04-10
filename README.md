@@ -1,5 +1,5 @@
 ```python
-README_ver = 090242021.1
+README_ver = 090242021.2
 ```
 # Just write it
 ------
@@ -13,6 +13,14 @@ The goals of the project are
 Since it's open source you can fork it and modify it at your please.
 Licensed under the GPLv3 License, please read more [@link][1]
 
+#### Instalation
+---
+
+Clone this repository with 
+
+```git
+git clone https://github.com/luzxyz/writeit
+```
 
 #### Dependencies
 ---
