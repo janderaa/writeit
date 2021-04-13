@@ -13,7 +13,7 @@ The goals of the project are
 Since it's open source you can fork it and modify it at your please.
 Licensed under the GPLv3 License, please read more [@link][1]
 
-#### Instalation
+#### Installation
 ---
 
 Clone this repository with 
